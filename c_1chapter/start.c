@@ -6,18 +6,10 @@
 */
 
 #include <stdio.h>
-int main(void){
-	
-	int num1, num2, sum;
-	printf("두정수 입력 ");
-	
-	scanf("%d %d", &num1, &num2);
-	sum = num1 + num2;
-	
-	printf("%d + %d = %d\n", num1, num2, sum);
-	printf("%d - %d = %d\n", num1, num2, num1 - num2);
-	printf("%d * %d = %d\n", num1, num2, num1 * num2);
-	printf("%d / %d = %d\n", num1, num2, num1 / num2);
+
+int main(void) {
 	
 	return 0;
 }
+
+// gcc 파일이름.c -o 파일이름.out && ./파일이름.out
