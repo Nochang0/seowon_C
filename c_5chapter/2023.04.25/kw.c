@@ -26,8 +26,3 @@ int main(void)
 
     return 0;
 }
-
-
-
-// gcc basic.c -o basic.out -lm && ./basic.out
-
