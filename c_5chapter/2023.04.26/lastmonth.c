@@ -39,8 +39,3 @@ int main(void)
 	printf("%d년 %d월은 %d일이 있습니다.\n", year, month, day);
     return 0;
 }
-
-
-
-// gcc basic.c -o basic.out -lm && ./basic.out
-
