@@ -10,6 +10,7 @@
 int main(void) {
 	char name[20];
 	double cm, m, kg, bmi;
+	
 	printf("이름과 키(cm)와 몸무게 (kg) 입력. >> ");
 	scanf("%s %lf %lf", name, &cm, &kg);
 	m = cm * 0.01;
@@ -22,13 +23,14 @@ int main(void) {
 	} else if (bmi > 18.5 && bmi <= 23) {
 		printf ("정상체중 입니다.\n");
 	} else if (bmi > 23 && bmi <= 25) {
-printf("과체증입니다.\n");
+		printf("과체증입니다.\n");
 	} else if (bmi > 25 && bmi <= 30){
-printf("비만 입니다. \n");
+		printf("비만 입니다. \n");
 	} else if (bmi > 30) {
-printf("고도비만입니다.\n");
-		}
-return 0;
+		printf("고도비만입니다.\n");
+	}
+	
+	return 0;
 }
 
 
