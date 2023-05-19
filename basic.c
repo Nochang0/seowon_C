@@ -7,20 +7,35 @@
 
 #include <stdio.h>
 
-void hi(void){
-	printf("Hi! Let's enjoy C programmming.\n");
-}
-
-void bye() {printf("Bye!\n"); }
 
 int main(void){
-	hi();
-	bye();
+	int amount = 10;
+    int price = 1000;
+    int total = amount * price;
+	int width;
 	
-	hi();
-	bye();
 	
+	
+	draw_line('-', 30);
+	printf("수량 단가 합계\n");
+	
+	width = 3 + 8 + 8 + 2;
+	
+	draw_line('*', width);
+	printf("%3d %8d %8d\n", amount, price, total);
+	
+	draw_line('-', 30);
 	return 0;
+}
+
+
+
+void draw_line(char ch, int len){
+	int i;
+	
+	for (i = 0; i < len; i++)
+		printf("%c", &ch);
+	printf("\n");
 }
 // gcc basic.c -o basic.out -lm && ./basic.out
 
