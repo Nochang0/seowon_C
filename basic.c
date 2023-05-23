@@ -1,41 +1,36 @@
 /*
-* 프로그램 내용 : 년도와 월을 받아 달의 마지막 날을 출력하는 프로그램
+* 프로그램 내용 : 5과 프로그래밍 18번
 * 개발자 : 연승현
 * 학번 : 202311420
-* 실습일 : 2023.05.19
+* 실습일 : 2023.05.23
 */
 
 #include <stdio.h>
 
-
-int main(void){
-	int amount = 10;
-    int price = 1000;
-    int total = amount * price;
-	int width;
-	
-	
-	
-	draw_line('-', 30);
-	printf("수량 단가 합계\n");
-	
-	width = 3 + 8 + 8 + 2;
-	
-	draw_line('*', width);
-	printf("%3d %8d %8d\n", amount, price, total);
-	
-	draw_line('-', 30);
-	return 0;
+int main() {
+    int minutes;
+    while (1) {
+        printf("주차 시간(분)? ");
+        scanf("%d", &minutes);
+        if (minutes == 0) break;
+        else if (minutes > 1440) {
+            printf("주차 시간은 최대 24시간(1440분)을 넘을 수 없습니다.\n");
+            continue;
+        }
+        else {
+            int fee = 2000;
+            int excess = (minutes - 30) / 10;
+            if (excess > 0) {
+                fee += excess * 1000;
+                if (fee > 25000) fee = 25000;
+            }
+            printf("주차 요금: %d원\n", fee);
+        }
+    }
+    return 0;
 }
 
 
 
-void draw_line(char ch, int len){
-	int i;
-	
-	for (i = 0; i < len; i++)
-		printf("%c", &ch);
-	printf("\n");
-}
 // gcc basic.c -o basic.out -lm && ./basic.out
 
