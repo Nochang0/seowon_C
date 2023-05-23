@@ -7,30 +7,40 @@
 
 #include <stdio.h>
 
-int main() {
-    int minutes;
-    while (1) {
-        printf("주차 시간(분)? ");
-        scanf("%d", &minutes);
-        if (minutes == 0) break;
-        else if (minutes > 1440) {
-            printf("주차 시간은 최대 24시간(1440분)을 넘을 수 없습니다.\n");
-            continue;
-        }
-        else {
-            int fee = 2000;
-            int excess = (minutes - 30) / 10;
-            if (excess > 0) {
-                fee += excess * 1000;
-                if (fee > 25000) fee = 25000;
-            }
-            printf("주차 요금: %d원\n", fee);
-        }
-    }
-    return 0;
+int main(void) {
+    int fact;
+	fact = get_factorial(i)
+	
+	printf("%d", fact);
+	return 0;
 }
 
+double get_area(double radius) {
+    const double PI = 3.14159265359;
+    return PI * radius * radius;
+}
 
+void draw_line(char ch, int len) {
+    int i;
+    for (i = 0; i < len; i++) {
+        printf("%c", ch);
+    }
+    printf("\n");
+}
 
+int get_max(int a, int b, int c) {
+    int max = a > b ? a : b;
+    max = c > max ? c : max;
+    return max;
+}
+
+int get_factorial(int num){
+	int i;
+	int result = 1;
+	
+	for (i = 1; i <= num; i++)
+		result *= i;
+	return result;
+}
 // gcc basic.c -o basic.out -lm && ./basic.out
 
