@@ -8,39 +8,37 @@
 #include <stdio.h>
 
 int main(void) {
-    int fact;
-	fact = get_factorial(i)
+	int mid[5], final[5];
+	int i;
+	double avg[5];
+	char grade[5];
 	
-	printf("%d", fact);
+	
+	for(i=0;i<5;i++){
+		
+		printf("please enter mid and find score");
+		scanf("%d %d", &mid[i], %final[i]);
+		avg = (mid[i] + final[i])/2.0;
+		printf("The average score is %.2lf\n", avg[i]);
+		
+		if(avg[i] >= 90)
+			grade[i] = 'A';
+		else if(avg[i] >= 80)
+			grade[i] = 'B';
+		else if(avg[i] >= 70)
+			grade[i] = 'C';
+		else if(avg[i] >= 60)
+			grade[i] = 'D';
+		else
+			grade[i] = 'F';
+		printf("The average score is %.2lf\n", avg[i]);
+		printf("The grade is %c\n", grade[i]);
+	}
 	return 0;
 }
 
-double get_area(double radius) {
-    const double PI = 3.14159265359;
-    return PI * radius * radius;
-}
 
-void draw_line(char ch, int len) {
-    int i;
-    for (i = 0; i < len; i++) {
-        printf("%c", ch);
-    }
-    printf("\n");
-}
 
-int get_max(int a, int b, int c) {
-    int max = a > b ? a : b;
-    max = c > max ? c : max;
-    return max;
-}
 
-int get_factorial(int num){
-	int i;
-	int result = 1;
-	
-	for (i = 1; i <= num; i++)
-		result *= i;
-	return result;
-}
 // gcc basic.c -o basic.out -lm && ./basic.out
 
