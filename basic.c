@@ -8,19 +8,26 @@
 #include <stdio.h>
 
 int main(void) {
-	int x[5] = { 10, 20, 30, 40, 50 };
-	int y[5] = { 0 };
+	int x[5] = { 10, 20, 30, 40 50 };
+	int y[5] = { 10, 20, 30, 40 50 };
 	int i;
+	int is_equal;
 	
+	if(x == y)
+		printf("두 배열의 주소가 같습니다.\n");
+	
+	is_equal = 1;
 	
 	for(i=0;i<5;i++){
-		y[i] = x[i];
+		if(x[i] != y[i]){
+			is_equal = 0;
+			break;
+		}
 	}
 	
-	printf("y = ");
-	for(i=0;i<5;i++)
-		printf("%d ", y[i]);
-	printf("\n");
+	if(is_equal == 1){
+		printf("두 배열의 내용이 같습니다.\n");
+	}
 	
 	return 0;
 }
