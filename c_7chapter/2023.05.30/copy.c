@@ -1,5 +1,5 @@
 /*
-* 프로그램 내용 : 프로그래밍 배열 실습2
+* 프로그램 내용 : 프로그래밍 배열 복사
 * 개발자 : 연승현
 * 학번 : 202311420
 * 실습일 : 2023.05.30
@@ -18,15 +18,10 @@ int main(void) {
 	}
 	
 	printf("y = ");
+	
 	for(i=0;i<5;i++)
 		printf("%d ", y[i]);
 	printf("\n");
 	
 	return 0;
 }
-
-
-
-
-// gcc basic.c -o basic.out -lm && ./basic.out
-
