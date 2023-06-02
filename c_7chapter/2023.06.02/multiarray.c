@@ -1,12 +1,11 @@
 /*
-* 프로그램 내용 : 5과 프로그래밍 18번
+* 프로그램 내용 : 2차원 배열을 이용해 이름을 연속으로 입력받아 출력하는 프로그램
 * 개발자 : 연승현
 * 학번 : 202311420
 * 실습일 : 2023.06.02
 */
 
 #include <stdio.h>
-#define SIZE 5
 
 
 int main(void) {
@@ -22,7 +21,4 @@ int main(void) {
    }
     return 0;
 }
-
-
-// gcc test.c -o test.out -lm && ./test.out
 
