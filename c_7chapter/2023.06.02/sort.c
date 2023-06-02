@@ -1,5 +1,5 @@
 /*
-* 프로그램 내용 : 5과 프로그래밍 18번
+* 프로그램 내용 : 선택 정렬 프로그램
 * 개발자 : 연승현
 * 학번 : 202311420
 * 실습일 : 2023.06.02
@@ -11,7 +11,7 @@
 
 int main(void) {
 	int data[SIZE] = { 7, 3, 9, 5, 1 };
-	int i,j;
+	int i, j;
 	int index, temp;
 	
 	for(i=0;i<SIZE-1;i++){
@@ -33,7 +33,3 @@ int main(void) {
     
     return 0;
 }
-
-
-// gcc test.c -o test.out -lm && ./test.out
-
