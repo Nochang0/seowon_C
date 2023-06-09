@@ -1,5 +1,5 @@
 /*
-* 프로그램 내용 : 프로그래밍 6과 19번 문제
+* 프로그램 내용 : 배열 예제1
 * 개발자 : 연승현
 * 학번 : 202311420
 * 실습일 : 2023.06.09
@@ -37,5 +37,3 @@ int print_matrix(char name[], int A[][COLS]) {
 	return 0;
 }
 		 
-// gcc basic.c -o basic.out -lm && ./basic.out
-
