@@ -15,7 +15,6 @@ int main(void){
 	int width;
 	
 	
-	
 	draw_line('-', 30);
 	printf("수량 단가 합계\n");
 	
