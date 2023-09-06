@@ -1,43 +1,36 @@
-/*
-* 프로그램 내용 : 5과 프로그래밍 18번
-* 개발자 : 연승현
-* 학번 : 202311420
-* 실습일 : 2023.06.02
-*/
+#include <stdio.h>
+
+int main(void) { // 원을 입력받아 다른나라 화폐로 출력
+	
+	float rate = 1324.0;   // 환율 (선생님이 환율을 주시면 수정)
+	float won; // 원
+	float different_rate; // 다른나라 화페 (달러, 위안 등)
+	
+	printf("환전할 금액을 입력(원) : ");
+	scanf("%f", &won);
+
+	different_rate = won / rate; // 원을 다른나라 화페로 환전
+
+	printf("%.0f 원은 %.2f 달러입니다.", won, different_rate); // '달러' 텍스트 필요하면 수정, 다른나라 화폐로 출력
+	
+	return 0;
+}
+
 
 #include <stdio.h>
-#define LIMIT 32
 
-int get_bnum(int dnum, int bnum[]);
-void print_bnum(int bnum[], int num);
+int main(void) { // 다른나라 화폐 값을 입력받아 원화로 출력
+	
+	float rate = 1324.0;   // 환율 (선생님이 환율을 주시면 수정)
+	float won; // 원
+	float different_rate; // 다른나라 화페 (달러, 위안 등)
+	
+	printf("환전할 금액을 입력(다른나라 화폐) : "); // '다른나라 화폐' 텍스트 수정, 
+	scanf("%f", &different_rate);
 
-int main(void) {
+	won = different_rate * rate; // 다른나라 화폐를 원으로 환전
+
+	printf("%.0f 달러는 %.2f 원입니다.", different_rate, won); // '달러' 텍스트 필요하면 수정, 원으로 출력
 	
-	int dnum, bnum[LIMIT], num;
-	
-	printf("Please enter a number >> ");
-	scanf("%d", &dnum);
-	num = get_bnum(dnum, bnum);
-	print_bnum(bnum, num);
-    return 0;
+	return 0;
 }
-
-int get_bnum(int dnum, int bnum[]){
-	int i;
-	
-	for(i=0;i<LIMIT && dnum > 0;i++){
-		bnum[i] = dnum % 2;
-		dnum = dnum / 2;
-	}
-	return i-1;
-}
-void print_bnum(int bnum[], int num){
-	int i;
-	
-	printf("\nBinary number : ");
-	for(i=num;i>=0;i--){
-		printf(" %d", bnum[i]);
-	}
-}
-// gcc test.c -o test.out -lm && ./test.out
-
