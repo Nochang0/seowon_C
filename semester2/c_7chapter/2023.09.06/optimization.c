@@ -1,5 +1,5 @@
 /*
-* 프로그램 내용 : 배열을 이용하여 데이터를 저장하고, 합을 구하고, 배열 원소에 저장된 내용을 출력하는 프로그램4
+* 프로그램 내용 : 학생들의 이름과 중간고사, 기말고사 점수를 입력받아 각 학생의 평균 점수를 계산하고, 평균 점수가 가장 높은 학생의 이름과 그 점수를 출력하는 프로그램
 * 개발자 : 연승현
 * 학번 : 202311420
 * 실습일 : 2023.09.06
@@ -39,6 +39,31 @@ int main(void) {
 			max = i;
 	printf("\nThe name of max score : %s, score : %lf \n", name[max], avg[max]);
 	*/
-	print("\nThe name of max score : %s, score: %2lf \n", name[max], score[max][2]);
+	printf("\nThe name of max score : %s, score: %2lf \n", name[max], score[max][2]);
 	return 0;
+}
+
+
+void read_data(double score[][3], char name[][20], int size) {
+    int i;
+	for(i=0;i<size;i++) {
+		printf("Please enter name, mid and final exam scores >> ");
+		scanf("%s %lf %lf", name[i], &score[i][0], &score[i][1]);
+		score[i][2] = (score[i][0] + score[i][1])/2.0;
+	}
+}
+
+void print_data(double score[][3], char name[][20], int size) {
+    int i;
+	for(i=0;i<size;i++)
+		printf("\n%s : avg[%d] = %.2lf", name[i], i, score[i][2]);
+}
+
+int find_max(double score[][3], int size) {
+    int max, i;
+	max = 0;
+	for(i=1;i<5;i++)
+		if(score[max][2] < score[i][2])
+			max = i;
+	return max;
 }

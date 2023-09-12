@@ -30,5 +30,5 @@ int main(void) {
 	
 	return 0;
 }
-
+// gcc optimization.c -o optimization.out -lm && ./optimization.out
 // gcc test.c -o test.out -lm && ./test.out
