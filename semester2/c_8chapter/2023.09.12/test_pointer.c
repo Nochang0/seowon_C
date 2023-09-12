@@ -5,7 +5,6 @@
 * 실습일 : 2023.09.12
 */
 
-
 #include <stdio.h>
 
 void test1(int x){
