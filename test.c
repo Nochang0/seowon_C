@@ -1,34 +1,41 @@
 /*
-* 프로그램 내용 : 배열을 이용하여 데이터를 저장하고, 합을 구하고, 배열 원소에 저장된 내용을 출력하는 프로그램2
+* 프로그램 내용 : 7과 프로그래밍 문제 17번
 * 개발자 : 연승현
 * 학번 : 202311420
-* 실습일 : 2023.09.05
+* 실습일 : 2023.09.17
 */
-
 #include <stdio.h>
+#define MAX_SIZE 10
 
-int main(void) {
-	int mid[5], final[5];
-	double avg[5];
-	int i, max;
-	char name[5][20];
-	
-	for(i=0;i<5;i++){
-		printf("Please enter mid and final exam scores >> ");
-		scanf("%s %d %d", name[i], &mid[i], &final[i]);
-		avg[i] = (double)(mid[i]+final[i])/2.0;
-	}
-	
-	for(i=0;i<5;i++)
-		printf("\n%s avg[%d] = %lf", name[i], i, avg[i]);
-	
-	max = 0;
-	for(i=1;i<5;i++)
-		if(max < avg[i])
-			max = i;
-	printf("\nThe name of max score : %s, score : %lf \n", name[max], avg[max]);
-	
-	return 0;
+void printSet(int set[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", set[i]);
+    }
+    printf("\n");
 }
-// gcc optimization.c -o optimization.out -lm && ./optimization.out
+
+int main() {
+    int set[MAX_SIZE];
+    int size = 0;
+
+    while (1) {
+        int element;
+        printf("배열에 추가할 원소? ");
+        scanf("%d", &element);
+
+        if (size == MAX_SIZE) {
+            printf("더 이상 원소를 추가할 수 없습니다.");
+            break;
+        }
+        set[size] = element;
+        size++;
+        printSet(set, size);
+    }
+   return 0;
+}
+
+
+
+
+
 // gcc test.c -o test.out -lm && ./test.out
