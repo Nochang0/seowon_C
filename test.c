@@ -1,38 +1,57 @@
 /*
-* 프로그램 내용 : 7과 프로그래밍 문제 17번
+* 프로그램 내용 : 8과 프로그래밍 문제 18번
 * 개발자 : 연승현
 * 학번 : 202311420
-* 실습일 : 2023.09.17
+* 실습일 : 2023.09.23
 */
 #include <stdio.h>
-#define MAX_SIZE 10
 
-void printSet(int set[], int size) {
-    for (int i = 0; i < size; i++) {
-        printf("%d ", set[i]);
+#define SIZE 10
+
+int add_to_set(int *arr, int size, int *count, int value) {
+    if (*count >= size) {
+        return 0; 
     }
-    printf("\n");
-}
-
-int main() {
-    int set[MAX_SIZE];
-    int size = 0;
-
-    while (1) {
-        int element;
-        printf("배열에 추가할 원소? ");
-        scanf("%d", &element);
-
-        if (size == MAX_SIZE) {
-            printf("더 이상 원소를 추가할 수 없습니다.");
-            break;
+    for (int i = 0; i < *count; i++) {
+        if (arr[i] == value) {
+            printf("해당 원소가 이미 [%d]에 존재합니다.\n",i);
+            return 0; 
         }
-        set[size] = element;
-        size++;
-        printSet(set, size);
     }
-   return 0;
+    arr[(*count)++] = value;
+    return 1;
 }
+
+void print_array(int *arr, int count){
+	for(int i=0;i<count;i++){
+		printf("%d ",arr[i]);
+	}
+	printf("\n");
+}
+
+int main(void) {
+	int array[SIZE];
+	int count = 0;
+	int input_value;
+
+	while(1){
+		printf("배열에 추가할 원소? ");
+		scanf("%d", &input_value);
+		if(add_to_set(array,sizeof(array)/sizeof(int),&count,input_value)){
+			print_array(array,count);
+		}
+		if(count>=SIZE){
+			break;
+		}
+	}
+	return 0;
+}
+
+
+
+
+
+
 
 
 
