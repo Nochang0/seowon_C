@@ -5,6 +5,9 @@
 * 실습일 : 2023.09.20
 */
 
+#include <stdio.h>
+#include <string.h>
+
 int main(void) {
 	char sentence[100] = "";
 	char word[20];

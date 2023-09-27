@@ -4,6 +4,7 @@
 * 학번 : 202311420
 * 실습일 : 2023.09.23
 */
+
 #include <stdio.h>
 
 #define SIZE 10

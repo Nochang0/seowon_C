@@ -4,7 +4,8 @@
 * 학번 : 202311420
 * 실습일 : 2023.09.20
 */
-
+#include <stdio.h>
+#include <string.h>
 
 int main(void){
 	char filename[] = "readme.txt";
