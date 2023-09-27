@@ -13,7 +13,7 @@ int swap_string(char* lhs, char* rhs, int size);
 
 #define MAX 5
 #define BUF_SZ 30
-
+#define SIZE 128
 
 int main(void) {
     char books[MAX][BUF_SZ] = {
