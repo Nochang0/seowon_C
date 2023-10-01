@@ -1,51 +1,98 @@
 /*
-* 프로그램 내용 : 8과 프로그래밍 문제 18번
+* 프로그램 내용 : 9과 프로그래밍 문제 17번
 * 개발자 : 연승현
 * 학번 : 202311420
-* 실습일 : 2023.09.23
+* 실습일 : 2023.10.1
 */
 
 #include <stdio.h>
+#include <string.h>
 
-#define SIZE 10
-
-int add_to_set(int *arr, int size, int *count, int value) {
-    if (*count >= size) {
-        return 0; 
-    }
-    for (int i = 0; i < *count; i++) {
-        if (arr[i] == value) {
-            printf("해당 원소가 이미 [%d]에 존재합니다.\n",i);
-            return 0; 
-        }
-    }
-    arr[(*count)++] = value;
-    return 1;
+void printMenu() {
+    printf("[ 0.종료 1.추가 2.수정 3.목록 ] 선택? ");
 }
 
-void print_array(int *arr, int count){
-	for(int i=0;i<count;i++){
-		printf("%d ",arr[i]);
-	}
-	printf("\n");
+void addSong(char songs[][40], int *count) {
+    if (*count >= 20) {
+        printf("더 이상 노래를 추가할 수 없습니다.\n");
+        return;
+    }
+    
+    char title[40];
+    
+    printf("노래 제목? ");
+    fgets(title, sizeof(title), stdin);
+    title[strcspn(title, "\n")] = '\0';
+    
+    strcpy(songs[*count], title); 
+    (*count)++;
+}
+
+void modifySong(char songs[][40], int count) {
+    char searchTitle[40];
+    
+    printf("찾을 노래 제목? ");
+    fgets(searchTitle, sizeof(searchTitle), stdin);
+     searchTitle[strcspn(searchTitle, "\n")] = '\0';
+     
+     for (int i = 0; i < count; i++) {
+         if (strcmp(songs[i], searchTitle) == 0) {
+             char newTitle[40];
+             
+             printf("수정할 제목? ");
+             fgets(newTitle, sizeof(newTitle), stdin);
+             newTitle[strcspn(newTitle, "\n")] = '\0';
+             
+             strcpy(songs[i], newTitle);
+             return;
+         }
+     }
+     printf("해당하는 노래를 찾을 수 없습니다.\n");
+}
+
+void printSongs(char songs[][40], int count) {
+   if (count == 0) {
+       printf("노래 목록이 비어 있습니다.\n");
+       return;
+   }
+   
+   printf("<< 노래 목록 >>\n");
+   
+   for (int i = 0; i < count; i++) {
+       printf("%s\n", songs[i]);
+   }
 }
 
 int main(void) {
-	int array[SIZE];
-	int count = 0;
-	int input_value;
+   char songs[20][40]; 
+   
+   int choice;
+   int songCount = 0;
 
-	while(1){
-		printf("배열에 추가할 원소? ");
-		scanf("%d", &input_value);
-		if(add_to_set(array,sizeof(array)/sizeof(int),&count,input_value)){
-			print_array(array,count);
-		}
-		if(count>=SIZE){
-			break;
-		}
-	}
-	return 0;
+   do {
+       printMenu();
+       
+       char input[10];
+       fgets(input, sizeof(input), stdin);
+       sscanf(input, "%d", &choice);
+
+       switch(choice) { 
+           case 1:
+               addSong(songs, &songCount);
+               break;
+           case 2:
+               modifySong(songs, songCount);
+               break;
+           case 3:
+               printSongs(songs, songCount);
+               break;
+           default:
+               break;
+       }
+
+      } while(choice != 0);
+
+      return(0); 
 }
 
 
@@ -58,4 +105,12 @@ int main(void) {
 
 
 
-// gcc test.c -o test.out -lm && ./test.out
+
+
+
+
+
+
+
+
+// clear && gcc test.c -o test.out -lm && ./test.out
