@@ -4,53 +4,37 @@
 * 학번 : 202311420
 * 실습일 : 2023.10.15
 */
-
 #include <stdio.h>
 #include <string.h>
+#define SIZE 100
 
-typedef struct {
-    char title[21];
-    char artist[21];
-    char genre[21];
-    int duration;
-} SONG;
 
-void print_song(const SONG* song) {
-	printf("%s  %s   %s   %d초\n", song->title, song->artist, song->genre, song->duration);
-}
+
+void reverse_string(char *str);
 
 int main(void) {
-	SONG songs[5] = { 
-		{"I'm fine", "방탄소년단", "hip-hop", 209},
-		{"봄날", "방탄소년단", "hip-hop", 274},
-		{"Awake", "방탄소년단", "ballad", 226},
- 	   {"별 보러 가자","박보검","ballad" ,316},
-	   {"Love Shot","EXO","pop" ,200}
-     };
-	
-	while(1) {
-	    char keyword[21];
-	    printf("키워드(제목/아티스트)? ");
-	    scanf("%s", keyword);
-		
-	    if(strcmp(keyword,".") == 0)
-	        break;
-		
-	    for(int i=0; i<5; i++) {
-	        if(strcmp(songs[i].title,keyword) == 0 || strcmp(songs[i].artist,keyword) == 0) { 
-	            print_song(&songs[i]);
-	        }
-	    }
-	    printf("\n");
-   }
-	return 0;
+    char text[SIZE] = ""; // 입력 텍스트
+    
+    printf("입력: ");
+    scanf("%s", text);
+    reverse_string(&text);
+    // printf("%s", text);
+    return 0;
 }
 
-
-
-
-
-
+void reverse_string(char *str) {
+	// printf("%c\n", str[textLength-1]);
+	
+	int i=0, textLength = strlen(str)-1;
+	char result[SIZE];
+	
+	for (int j = textLength; j >= 0; j--) {
+		result[i] = str[j];
+		i += 1;
+	}
+    
+	printf("%s\n", result);
+}
 
 
 
