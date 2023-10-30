@@ -4,3 +4,8 @@ https://www.hackerschool.org/
 
 +챕터 8 배열인지 확인 후 수정
 printf("\n");
+
+
+
+ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 536F8F1DE80F6A35
+wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -

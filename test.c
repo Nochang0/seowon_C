@@ -4,6 +4,7 @@
 * 학번 : 202311420
 * 실습일 : 2023.10.15
 */
+
 #include <stdio.h>
 #include <string.h>
 #define SIZE 100
@@ -57,4 +58,4 @@ void reverse_string(char *str) {
 
 
 
-// clear && gcc test.c -o test.out -lm && ./test.out
+// clear && gcc test.c -o test.out -lm -lcurl && ./test.out
