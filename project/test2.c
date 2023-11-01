@@ -14,7 +14,7 @@ int main(void) {
 
         char bar[bar_length + 1];
         for (int j = 0; j < filled_length; j++) {
-            bar[j] = '█';
+            bar[j] = "█";
         }
         for (int j = filled_length; j < bar_length; j++) {
             bar[j] = ' ';

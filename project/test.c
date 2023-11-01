@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 int main(void) {
-    int file_size = 1000;
+    int file_size = 100;
     int download_speed = 10;
     float total_time = (float)file_size / download_speed + 1;
 
@@ -17,7 +17,7 @@ int main(void) {
         usleep(100000);
     }
 
-    printf("\r\nEND\n");
+    printf("\nEND\n");
 
     return 0;
 }

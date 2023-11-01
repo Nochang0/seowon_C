@@ -40,7 +40,7 @@ int main(void) {
     scanf("%s", url);								// URL 주소 받기 (url)
 	
 	if (url == 0 || !strstr(url, "http")) return printf(COLOR_RED "정상적인 URL인지 확인 후 다시 시도해주세요.\n");
-    char* MediaURL = encodeURI(url);				// URL Encoding
+    char[] EncodeURL = encodeURI(url);				// URL Encoding
 	printf("\033[2J\033[H");	
 	
 	
